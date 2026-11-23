@@ -29,7 +29,14 @@ Built 2026-11-23.
 ## Env vars (see .env.example)
 STRIPE_SECRET_KEY, STRIPE_PRICE_REMOVE_ADS (optional), REMOVE_ADS_AMOUNT_CENTS, STRIPE_WEBHOOK_SECRET, PUBLIC_BASE_URL (optional), PORT, AD_EVERY, CURRENCY.
 
-## Public preview / tunnel status
+## Deployment (Render, free plan)
+- Live: https://bible-stories-app.onrender.com · service srv-dc2bplbrjlhs73af8slg (workspace tea-dc2bg9om7kps7390luj0, oregon)
+- Repo: https://github.com/DIstrict44-Hub/bible-stories-app (public, main). autoDeploy on commit: `git push` redeploys.
+- Env: NODE_VERSION=22, AD_EVERY=4, PUBLIC_BASE_URL=https://bible-stories-app.onrender.com. No Stripe keys, so it runs in demo mode.
+- Free plan: it sleeps after about 15 minutes idle, so a cold start takes 30–60 s. The disk is ephemeral, so db.json (likes, comments, saves, entitlements) resets on every deploy or restart.
+- Health check path isn't set (the MCP tool can't set it). It can be set to /api/health in the dashboard.
+
+## Box tunnel status (historical)
 cloudflared quick tunnels do not work from this box. Outbound QUIC and TCP to port 7844 are blocked, so the edge connection fails and the trycloudflare URL returns a 1033 error. SSH tunnels (localhost.run on :22, pinggy on :443) and tunnelmole (port 8083) are refused by the egress proxy too. Only normal HTTPS egress is allowed. The binary is at ~/bin/cloudflared.
 To get a phone URL, either deploy somewhere (Render, Fly, Railway, a VPS, or Vercel with the API split out), or run a tunnel from a machine with open egress.
 
