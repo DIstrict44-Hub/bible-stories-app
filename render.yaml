@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bible-stories-app
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm ci --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: AD_EVERY
+        value: "4"
+      # Demo payment mode: leave STRIPE_SECRET_KEY unset. PUBLIC_BASE_URL falls back to RENDER_EXTERNAL_URL.

@@ -1,0 +1,17 @@
+{
+  "name": "bible-stories-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "videos": "python3 scripts/make_bg.py && python3 scripts/make_videos.py"
+  },
+  "dependencies": {
+    "express": "^4.22.3",
+    "stripe": "^23.2.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

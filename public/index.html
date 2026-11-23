@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0705">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bible Stories">
+<meta name="description" content="Short, cinematic Bible stories with King James scripture.">
+<title>Bible Stories</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">✝</span><span class="brand-name">Bible Stories</span></div>
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-view="feed" role="tab">For You</button>
+      <button class="tab" data-view="saved" role="tab">Saved</button>
+    </nav>
+    <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </header>
+
+  <main id="feed" class="feed" aria-live="polite"></main>
+  <main id="saved" class="saved hidden"></main>
+
+  <div id="demoBadge" class="demo-badge hidden">DEMO PAYMENTS</div>
+
+  <div id="bottomStack" class="bottom-stack">
+    <div id="installBar" class="install-bar hidden" role="region" aria-label="Install app">
+      <img src="/icons/icon-192.png" alt="" class="install-icon">
+      <div class="install-text"><strong>Bible Stories</strong><span>Install for full-screen stories</span></div>
+      <button id="installBtn" class="btn-gold">Install now</button>
+      <button id="installClose" class="install-close" aria-label="Dismiss">✕</button>
+    </div>
+    <div id="bannerAd" class="banner-ad hidden" aria-label="Advertisement">
+      <span class="ad-tag">AD</span>
+      <span class="banner-copy">Banner ad placeholder · 320×50</span>
+      <button class="link-btn" data-action="remove-ads">Remove ads</button>
+    </div>
+  </div>
+</div>
+
+<!-- Comments sheet -->
+<div id="sheetBackdrop" class="backdrop hidden"></div>
+<section id="commentsSheet" class="sheet" aria-hidden="true">
+  <div class="sheet-handle"></div>
+  <div class="sheet-head"><h3><span id="commentCountLabel">0</span> comments</h3><button class="icon-btn sheet-close" aria-label="Close">✕</button></div>
+  <ul id="commentList" class="comment-list"></ul>
+  <form id="commentForm" class="comment-form">
+    <input id="commentName" maxlength="40" placeholder="Name (optional)" autocomplete="nickname">
+    <div class="comment-row"><input id="commentText" maxlength="500" placeholder="Add a comment…" required><button class="btn-gold" type="submit">Post</button></div>
+  </form>
+</section>
+
+<!-- Menu / support sheet -->
+<section id="menuSheet" class="sheet" aria-hidden="true">
+  <div class="sheet-handle"></div>
+  <div class="sheet-head"><h3>Support Bible Stories</h3><button class="icon-btn sheet-close" aria-label="Close">✕</button></div>
+  <div class="menu-body">
+    <div class="card parchment">
+      <h4>Remove Ads</h4>
+      <p id="removeAdsCopy">One-time purchase. No subscription — pay once, enjoy every story ad-free on this device.</p>
+      <button id="removeAdsBtn" class="btn-gold wide" data-action="remove-ads">Remove Ads · <span id="removeAdsPrice">$4.99</span></button>
+      <p id="adFreeNote" class="ok hidden">✓ Ads removed on this device. Thank you!</p>
+    </div>
+    <div class="card parchment">
+      <h4>Give a Gift</h4>
+      <p>Optional one-time donation to help make more stories.</p>
+      <div class="amounts">
+        <button class="amount" data-cents="300">$3</button>
+        <button class="amount active" data-cents="500">$5</button>
+        <button class="amount" data-cents="1000">$10</button>
+        <input id="customAmount" class="amount custom" inputmode="decimal" placeholder="Custom $">
+      </div>
+      <button id="donateBtn" class="btn-outline wide">Donate</button>
+    </div>
+    <button id="installMenuBtn" class="btn-outline wide">Install app</button>
+    <p class="fineprint">Scripture: King James Version (public domain). Payments are one-time only via Stripe Checkout.</p>
+  </div>
+</section>
+
+<!-- iOS install help -->
+<section id="iosSheet" class="sheet" aria-hidden="true">
+  <div class="sheet-handle"></div>
+  <div class="sheet-head"><h3>Add to Home Screen</h3><button class="icon-btn sheet-close" aria-label="Close">✕</button></div>
+  <ol class="ios-steps">
+    <li>Tap the <b>Share</b> button <span class="ios-share">⬆︎</span> in Safari’s toolbar.</li>
+    <li>Scroll and choose <b>Add to Home Screen</b>.</li>
+    <li>Tap <b>Add</b>. Bible Stories opens full-screen like an app.</li>
+  </ol>
+</section>
+
+<div id="toast" class="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>

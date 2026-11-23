@@ -1,0 +1,90 @@
+[
+ {
+  "id": "creation",
+  "title": "The Creation",
+  "reference": "Genesis 1",
+  "verse": "In the beginning God created the heaven and the earth.",
+  "verseRef": "Genesis 1:1",
+  "description": "In six days God made the heavens, the earth, and all that is in them.",
+  "src": "/videos/creation.mp4",
+  "poster": "/posters/creation.jpg",
+  "baseLikes": 124
+ },
+ {
+  "id": "noah",
+  "title": "Noah's Ark",
+  "reference": "Genesis 6-9",
+  "verse": "But Noah found grace in the eyes of the LORD.",
+  "verseRef": "Genesis 6:8",
+  "description": "A righteous man builds an ark, and God sets His bow in the cloud.",
+  "src": "/videos/noah.mp4",
+  "poster": "/posters/noah.jpg",
+  "baseLikes": 311
+ },
+ {
+  "id": "david-goliath",
+  "title": "David and Goliath",
+  "reference": "1 Samuel 17",
+  "verse": "Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of the LORD of hosts",
+  "verseRef": "1 Samuel 17:45",
+  "description": "A shepherd boy faces a giant with a sling, a stone, and faith.",
+  "src": "/videos/david-goliath.mp4",
+  "poster": "/posters/david-goliath.jpg",
+  "baseLikes": 287
+ },
+ {
+  "id": "daniel",
+  "title": "Daniel in the Lions' Den",
+  "reference": "Daniel 6",
+  "verse": "Thy God whom thou servest continually, he will deliver thee.",
+  "verseRef": "Daniel 6:16",
+  "description": "Thrown to the lions for praying, Daniel is kept safe by God.",
+  "src": "/videos/daniel.mp4",
+  "poster": "/posters/daniel.jpg",
+  "baseLikes": 198
+ },
+ {
+  "id": "jonah",
+  "title": "Jonah and the Great Fish",
+  "reference": "Jonah 1-2",
+  "verse": "Now the LORD had prepared a great fish to swallow up Jonah.",
+  "verseRef": "Jonah 1:17",
+  "description": "Running from God's call, Jonah is swallowed by a great fish.",
+  "src": "/videos/jonah.mp4",
+  "poster": "/posters/jonah.jpg",
+  "baseLikes": 176
+ },
+ {
+  "id": "calms-storm",
+  "title": "Jesus Calms the Storm",
+  "reference": "Mark 4",
+  "verse": "And he arose, and rebuked the wind, and said unto the sea, Peace, be still.",
+  "verseRef": "Mark 4:39",
+  "description": "With three words, Jesus stills the wind and the waves.",
+  "src": "/videos/calms-storm.mp4",
+  "poster": "/posters/calms-storm.jpg",
+  "baseLikes": 402
+ },
+ {
+  "id": "prodigal-son",
+  "title": "The Prodigal Son",
+  "reference": "Luke 15",
+  "verse": "I will arise and go to my father",
+  "verseRef": "Luke 15:18",
+  "description": "A lost son comes home to a father who runs to meet him.",
+  "src": "/videos/prodigal-son.mp4",
+  "poster": "/posters/prodigal-son.jpg",
+  "baseLikes": 265
+ },
+ {
+  "id": "good-samaritan",
+  "title": "The Good Samaritan",
+  "reference": "Luke 10",
+  "verse": "But a certain Samaritan, as he journeyed, came where he was: and when he saw him, he had compassion on him",
+  "verseRef": "Luke 10:33",
+  "description": "Who is my neighbour? A stranger shows mercy on the road.",
+  "src": "/videos/good-samaritan.mp4",
+  "poster": "/posters/good-samaritan.jpg",
+  "baseLikes": 233
+ }
+]

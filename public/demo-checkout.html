@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo Checkout · Bible Stories</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0705;color:#f5ecd9;font-family:Inter,system-ui,sans-serif}
+.box{width:min(92vw,400px);background:#16100b;border:1px solid #d8b56a66;border-radius:18px;padding:24px;text-align:center}
+.tag{display:inline-block;background:#ffcf6e;color:#1b1208;font-weight:800;font-size:11px;letter-spacing:.1em;padding:4px 8px;border-radius:5px}
+h1{font-family:Georgia,serif;color:#f0d9a0;font-size:22px;margin:14px 0 4px}.amt{font-size:34px;font-weight:700;margin:10px 0}
+p{color:#b9a88a;font-size:14px;line-height:1.45}button{width:100%;padding:13px;border-radius:12px;border:0;font-weight:700;font-size:16px;margin-top:10px;cursor:pointer}
+.pay{background:linear-gradient(180deg,#f2d38a,#c99a45);color:#1b1208}.cancel{background:none;border:1px solid #d8b56a66;color:#f0d9a0}</style></head>
+<body><div class="box"><span class="tag">DEMO MODE · NO REAL CHARGE</span><h1 id="title">Checkout</h1><div class="amt" id="amt">…</div>
+<p>Stripe keys are not configured, so this page simulates Stripe Checkout. Tapping “Pay” marks the session paid without charging anything.</p>
+<button class="pay" id="pay">Pay (simulated)</button><button class="cancel" id="cancel">Cancel</button></div>
+<script>
+const id=new URLSearchParams(location.search).get('session_id');
+fetch('/api/checkout/session?session_id='+encodeURIComponent(id)).then(r=>r.json()).then(s=>{
+  document.getElementById('title').textContent=s.kind==='remove_ads'?'Remove Ads — one-time':'Donation — thank you!';
+  document.getElementById('amt').textContent='$'+(s.amount_total/100).toFixed(2);
+  document.getElementById('cancel').onclick=()=>location.href='/?checkout=cancel&kind='+s.kind;
+});
+document.getElementById('pay').onclick=async()=>{const r=await fetch('/api/checkout/demo-complete',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({session_id:id})}).then(r=>r.json());location.href=r.redirect;};
+</script></body></html>
